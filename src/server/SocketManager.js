@@ -1,10 +1,14 @@
 const io = require('./index.js').io;
 
-const {VERIFY_USER , USER_CONNECTED , LOGOUT} = require('../Events');
+const { VERIFY_USER, USER_CONNECTED, USER_DISCONNECTED, 
+    LOGOUT, COMMUNITY_CHAT, MESSAGE_RECIEVED, MESSAGE_SENT,
+    TYPING} = require('../Events');
 
 const {createUser , createMessage , createChat} = require('../Factories')
 
 let connectedUsers = { };
+
+let communityChat = createChat();
 
 module.exports = function(socket){
     console.log("Socket Id " + socket.id);
@@ -30,7 +34,26 @@ module.exports = function(socket){
 
     //User logouts
 
-};
+    //Get Community Chat
+    socket.on(COMMUNITY_CHAT, (callback) => {
+        callback(communityChat)
+    })
+
+    // socket.on(MESSAGE_SENT, ({
+    //     chatId,
+    //     message
+    // }) => {
+    //     sendMessageToChatFromUser(chatId, message)
+    // })
+
+    // socket.on(TYPING, ({
+    //     chatId,
+    //     isTyping
+    // }) => {
+    //     sendTypingFromUser(chatId, isTyping)
+    // })
+
+    };
 
 /*
 * Adds user to list passed in.
