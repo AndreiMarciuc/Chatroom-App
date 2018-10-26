@@ -16,8 +16,8 @@ export default class LoginForm extends Component {
         if(isUser){
             this.setError("User name is taken")
         }else{
-            this.props.setUser(user)
             this.setError("")
+            this.props.setUser(user)
         }
     }
 
@@ -53,6 +53,12 @@ export default class LoginForm extends Component {
                 placeholder={'Enter your Username'}
                 />
                 <div className="error" > {error ? error:null}</div>
+                <button
+                disabled = { nickname.length < 3 }
+                type = "submit"
+                className = "submit"
+                > Submit </button>
+                
         </form>
       </div>
     )

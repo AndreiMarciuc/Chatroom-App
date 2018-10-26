@@ -42,6 +42,21 @@ textarea {
     border-bottom: solid 2px #5d5d8a;
     outline: none
 }
+.submit {
+    width:100%;
+    text-align: center;
+    flex-direction: row;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    background: #3e3e5e;
+    transition: all .35s ease-out
+}
+
+.submit .submit:disabled {
+    opacity: .2;
+    background: #5d5d8a
+}
 
 .login-form .error {
     text-align: center;
@@ -314,7 +329,7 @@ textarea {
 .thread-container .thread {
     position: relative;
     width: 100%;
-    min-height: 800px;
+    min-height: 900px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -417,7 +432,7 @@ textarea {
 }
 
 .typing-user {
-    text-align: right;
+    text-align: left;
     margin: 10px 15px
 }
 
@@ -442,6 +457,7 @@ textarea {
     resize: none;
     padding-left: 15px;
     box-sizing: border-box;
+    font-size: 1em;
     width: 80%;
     height: 100%;
     border: none

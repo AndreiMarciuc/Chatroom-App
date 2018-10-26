@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FaChevronDown } from 'react-icons/fa';
+import { FaArrowCircleDown } from 'react-icons/fa';
 import { MdMenu } from 'react-icons/md';
 import { MdSearch } from 'react-icons/md';
 import { MdEject } from 'react-icons/md';
@@ -11,7 +11,7 @@ export default class SideBar extends Component{
         return (
             <div id="side-bar">
                 <div className="heading">
-                    <div className="app-name">Our Cool Chat <FaChevronDown /></div>
+                    <div className="app-name">Chat-Room < FaArrowCircleDown /></div>
                     <div className="menu">
                         <MdMenu />
                     </div>
